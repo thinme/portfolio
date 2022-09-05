@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<!--타임리프 선언 (사용하겠다는 선언)-->
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" type="text/css" href="/css/default.css">
+  <title>Title</title>
+</head>
+
+<body th:align="center">
+<h1>회원목록</h1>
+<table th:align="center" border="1" th:cellpadding="0" th:cellspacing="0" th:width="700">
+  <tr>
+    <th bgcolor="#add8e6" width="100">번호</th>
+    <th bgcolor="#add8e6" width="200">ID</th>
+    <th bgcolor="#add8e6" width="150">Email</th>
+    <th bgcolor="#add8e6" width="150">비밀번호</th>
+    <th bgcolor="#add8e6" width="150">비고</th>
+  </tr>
+  <tr th:each="member :${memberList}">
+    <td th:text="${member.seq}"></td>
+    <td> <a th:text="${member.id}"></a></td>
+    <td th:text="${member.email}"></td>
+    <td th:text="${member.password}"></td>
+    <td>
+      <a th:href="@{/account/getAccount(seq=${member.seq})}">
+        <button>상세정보</button>
+      </a>
+      <a th:href="@{/account/deleteAccount(seq=${member.seq})}">
+        <button>삭제하기</button>
+      </a>
+    </td>
+  </tr>
+</table>
+<a th:href="@{/account/insertAccount}">회원등록</a>
+<a th:href="@{/account/selectAccount}">회원찾기</a>
+</body>
+</html>

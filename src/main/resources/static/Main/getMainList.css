@@ -1,0 +1,30 @@
+@charset "UTF-8";
+
+body{
+    margin: 0;
+    padding: 0;
+}
+header{
+    display: flex;
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+header>.logo{
+    width: 70px;
+    height: 70px;
+    flex-shrink: 0;
+    margin: 10px 0 0 20px;
+}
+header>.logowrite{
+    color: burlywood;
+    size: 24px;
+    font-style: oblique;
+
+}
+header>.main{
+    position: absolute;
+    width: 1300px;
+    height: 300px;
+    opacity: 0.7;
+}
